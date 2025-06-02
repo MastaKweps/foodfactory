@@ -1,0 +1,507 @@
+/* Styles Généraux et Réinitialisation Basique */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #2F2F2F;
+    background-color: #FFFFFF;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; text-align: center; margin-top: 2rem; margin-bottom: 1.5rem; }
+h3 { font-size: 1.5rem; }
+p { margin-bottom: 1rem; }
+a { text-decoration: none; color: #D72323; }
+img { max-width: 100%; height: auto; }
+
+/* En-tête (Header) - Styles Desktop */
+header {
+  background: #D72323; 
+  padding: 1rem 0;
+  border-bottom: 1px solid #BF1D1D; 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+}
+
+header .logo img {
+}
+
+.main-nav {
+  display: flex; 
+  align-items: center; 
+  flex-grow: 1; 
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center; 
+  padding: 0;
+  margin: 0;  
+  width: 100%; 
+}
+
+.main-nav ul li {
+  margin-left: 20px; 
+}
+.main-nav ul li:first-child {
+  margin-left: 0;
+}
+.main-nav ul li a {
+  color: #FFFFFF; 
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+  color: #FFFFFF;
+  background-color: #BF1D1D; 
+}
+
+.cart-icon-desktop img {
+}
+
+/* Icône Hamburger - cachée sur desktop */
+.hamburger-icon {
+  display: none; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #FFFFFF;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/327158/pexels-photo-327158.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1');
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+.hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; text-shadow: 1px 1px 3px rgba(0,0,0,0.7); }
+
+.cta-button {
+    background-color: #D72323;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border: none;
+}
+.cta-button:hover { background-color: #BF1D1D; transform: translateY(-2px); cursor: pointer; }
+
+/* Bandeau d'arguments clés - Concerne probablement index.html */
+.key-arguments { background-color: #F8F8F8; padding: 2rem 0; text-align: center; }
+.key-arguments .container { display: flex; justify-content: space-around; flex-wrap: wrap; }
+.key-arguments .argument { flex: 1; padding: 1rem; font-weight: bold; min-width: 200px; color: #2F2F2F; }
+
+/* Section Nos Spécialités - Concerne probablement index.html */
+.specialties { padding: 3rem 0; background-color: #FFFFFF; }
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+.product-card { background-color: #FFFFFF; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+.product-card img { width: 100%; height: 200px; object-fit: cover; }
+.product-card h3 { font-size: 1.3rem; margin: 1rem 1rem 0.5rem 1rem; color: #2F2F2F; }
+.product-card .description { font-size: 0.9rem; padding: 0 1rem; color: #555; flex-grow: 1; margin-bottom: 1rem; }
+.product-card .price { font-size: 1.2rem; font-weight: bold; color: #D72323; padding: 0 1rem 1rem 1rem; text-align: right; margin-top: auto; }
+.specialties .text-center { text-align: center; margin-top: 2rem; }
+.cta-button.secondary { background-color: #8B5A2B; color: #fff; }
+.cta-button.secondary:hover { background-color: #704822; }
+
+/* Styles pour la Page Où Nous Trouver (location.html) */
+.page-location .container { padding-top: 2rem; padding-bottom: 3rem; }
+.page-location .page-title { text-align: center; font-size: 2.8rem; color: #2F2F2F; margin-bottom: 2.5rem; }
+.location-content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: flex-start; }
+.location-details h2 { font-size: 1.8rem; color: #D72323; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #f0f0f0; }
+.location-details h3 { font-size: 1.3rem; color: #2F2F2F; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+.location-details address { font-style: normal; line-height: 1.8; margin-bottom: 1.5rem; color: #555; }
+.location-details address strong { color: #2F2F2F; font-weight: bold; }
+.location-details p { color: #555; line-height: 1.8; }
+.location-details p a { color: #D72323; font-weight: bold; }
+.location-details p a:hover { text-decoration: underline; }
+.opening-hours { list-style: none; padding: 0; margin-bottom: 2rem; color: #555; }
+.opening-hours li { margin-bottom: 0.6rem; display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px dashed #eee; }
+.opening-hours li:last-child { border-bottom: none; }
+.opening-hours li strong { color: #2F2F2F; margin-right: 1rem; }
+.restaurant-photo { margin-top: 2rem; }
+.restaurant-photo img { width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.location-map h2 { font-size: 1.8rem; color: #D72323; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid #f0f0f0; }
+.map-responsive { overflow: hidden; position: relative; height: 0; padding-bottom: 75%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.map-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+/* Styles pour la Page À Propos (a-propos.html) */
+.page-about .container { padding-top: 2rem; padding-bottom: 3rem; }
+.page-about .page-title { text-align: center; font-size: 2.8rem; color: #2F2F2F; margin-bottom: 2.5rem; }
+.about-section { margin-bottom: 2.5rem; line-height: 1.7; color: #555; }
+.about-section h2 { font-size: 2rem; color: #D72323; margin-bottom: 1rem; }
+.about-section p { margin-bottom: 1rem; }
+.about-intro { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3rem; }
+.about-intro .about-text h2 { font-size: 2.2rem; color: #2F2F2F; margin-bottom: 1.5rem; }
+.about-image img { width: 100%; border-radius: 8px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+.about-values h2 { text-align: center; margin-bottom: 2rem; }
+.values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; text-align: center; }
+.value-item { background-color: #F8F8F8; padding: 2rem 1.5rem; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.value-item:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+.value-item .value-icon { width: 50px; height: auto; margin-bottom: 1rem; }
+.value-item h3 { font-size: 1.4rem; color: #2F2F2F; margin-bottom: 0.75rem; }
+.value-item p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+/* Styles pour la page À Propos (a-propos.html) */
+
+/* Pour centrer les paragraphes descriptifs principaux */
+.page-about .about-section > p { /* Cible les <p> qui sont des enfants directs de .about-section */
+  text-align: center;
+  max-width: 700px; /* Optionnel : limite la largeur des paragraphes centrés pour une meilleure lisibilité */
+  margin-left: auto;   /* Requis pour centrer le bloc <p> lui-même si max-width est utilisé */
+  margin-right: auto;  /* Requis pour centrer le bloc <p> lui-même si max-width est utilisé */
+  margin-bottom: 1rem; /* Conserve la marge en bas que vous aviez déjà */
+}
+
+
+.ordering-options-section h2 {
+}
+
+.order-method {
+  background-color: #f9f9f9; 
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border: 1px solid #eee;
+}
+
+.order-method:last-child {
+  margin-bottom: 0;
+}
+
+.order-method h3 {
+  font-size: 1.5rem; 
+  color: #2F2F2F;
+  margin-bottom: 0.75rem;
+}
+
+.order-method p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.uber-eats-button {
+  background-color: #00A355; 
+  color: #FFFFFF;
+}
+
+.uber-eats-button:hover {
+  background-color: #008244; 
+}
+
+.phone-order-contact {
+  font-size: 1.1rem;
+}
+
+.phone-number-prominent {
+  font-weight: bold;
+  font-size: 1.3rem; 
+  color: #D72323; 
+  text-decoration: none;
+}
+
+.phone-number-prominent:hover {
+  text-decoration: underline;
+}
+
+/* Styles pour les images de carte sur la page Menu */
+.responsive-menu-image {
+  display: block;     
+  width: 100%;          
+  max-width: 700px;     
+  height: auto;        
+  margin-left: auto;   
+  margin-right: auto;   
+  margin-bottom: 25px;  
+  border-radius: 8px;   
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+}
+
+.responsive-menu-image:last-child {
+  margin-bottom: 0;
+}
+/* Styles pour la Page Menu (menu.html) */
+.page-menu .container { 
+    padding-top: 2rem; 
+    padding-bottom: 3rem;
+}
+/* Styles pour la Page Mentions Légales (mentions-legales.html) */
+.page-legal .container { padding-top: 2rem; padding-bottom: 3rem; max-width: 900px; }
+.page-legal .page-title { text-align: center; font-size: 2.5rem; color: #2F2F2F; margin-bottom: 2.5rem; }
+.legal-section { margin-bottom: 2.5rem; }
+.legal-section h2 { font-size: 1.6rem; color: #D72323; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #eaeaea; }
+.legal-section p { line-height: 1.8; color: #444; margin-bottom: 0.8rem; text-align: justify; }
+.legal-section p strong { color: #2F2F2F; font-weight: 600; }
+.legal-update-date { text-align: right; font-style: italic; color: #777; font-size: 0.9rem; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #eaeaea; }
+
+/* Styles pour la Page FAQ (faq.html) */
+.page-faq .container { padding-top: 2rem; padding-bottom: 3rem; max-width: 900px; }
+.page-faq .page-title { text-align: center; font-size: 2.5rem; color: #2F2F2F; margin-bottom: 0.5rem; }
+.page-faq .page-subtitle { text-align: center; font-size: 1.1rem; color: #555; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+.faq-list { margin-top: 2rem; }
+.faq-item { background-color: #FFFFFF; border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 1rem; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: box-shadow 0.3s ease; }
+.faq-item:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.08); }
+.faq-question { padding: 1.25rem 1.5rem; font-weight: bold; font-size: 1.15rem; color: #2F2F2F; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.2s ease; }
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after { content: '+'; font-size: 1.8rem; font-weight: 300; color: #D72323; transition: transform 0.3s ease; }
+.faq-item[open] .faq-question { background-color: #D72323; color: #FFFFFF; border-bottom: 1px solid #BF1D1D; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+.faq-item[open] .faq-question::after { content: '\2013'; color: #FFFFFF; transform: rotate(0deg); }
+.faq-answer { padding: 1.5rem 1.75rem; line-height: 1.7; color: #444; background-color: #FDFDFD; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; }
+.faq-item[open] .faq-answer { border-top: none; }
+.faq-answer p { margin-bottom: 1rem; }
+.faq-answer p:last-child { margin-bottom: 0; }
+.faq-answer ul { margin-bottom: 1rem; padding-left: 1.5rem; list-style-position: outside; }
+.faq-answer ul li { margin-bottom: 0.5rem; }
+.faq-answer a { color: #D72323; text-decoration: underline; }
+.faq-answer a:hover { color: #BF1D1D; }
+
+/* Styles pour le pied de page (Footer) */
+footer {
+  background-color: #D72323; 
+  color: #FFFFFF; 
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+}
+footer .container { display: flex; flex-direction: column; align-items: center; }
+footer .footer-logo { margin-bottom: 1rem; }
+footer .social-media { margin-bottom: 1.5rem; }
+footer .social-media img {
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1) drop-shadow(0 0 1px rgba(0,0,0,0.3)); 
+}
+footer .social-media img:hover {
+  transform: scale(1.1);
+}
+footer .footer-links { margin-bottom: 1.5rem; }
+footer .footer-links a {
+  color: #FFFFFF; 
+  margin: 0 10px;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+footer .footer-links a:hover {
+  color: #FFC72C;
+}
+footer .footer-links p {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #f0f0f0;
+}
+footer > .container > p:last-child {
+  font-size: 0.9rem;
+  color: #f0f0f0;
+  margin-top: 1.5rem;
+}
+
+/* Styles pour le Menu Responsive (Hamburger)    */
+
+@media (max-width: 768px) {
+
+    .main-nav {
+        display: none; 
+        position: absolute;
+        top: 0; 
+        left: 0;
+        width: 100%;
+        height: 100vh; 
+         background-color: rgba(215, 35, 35, 0.9);
+        backdrop-filter: blur(5px);
+        padding-top: 70px; 
+        text-align: center;
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: center; 
+        z-index: 999; 
+        overflow-y: auto; 
+    }
+
+    .main-nav.nav-active { 
+        display: flex; 
+    }
+
+  .main-nav ul {
+    flex-direction: column; 
+    width: 100%;
+    padding-top: 1rem; 
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+    .main-nav ul li {
+        margin: 0.8rem 0; 
+        width: 100%;
+    }
+
+  .main-nav ul li a {
+    font-size: 1.2rem;
+    padding: 0.8rem 1rem;
+    display: block; 
+    width: 85%;
+    margin: 0 auto; 
+    color: #FFFFFF; 
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+  }
+  .main-nav ul li a:hover,
+  .main-nav ul li a.active {
+    background-color: rgba(191, 29, 29, 0.95); 
+    color: #FFFFFF;
+  }
+
+    .hamburger-icon {
+        display: block; 
+        position: relative; 
+    }
+    
+    .hamburger-icon.icon-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .hamburger-icon.icon-active span:nth-child(2) { opacity: 0; }
+    .hamburger-icon.icon-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .cart-icon-desktop {
+        display: none; 
+    }
+
+    /* Ajustements responsives généraux pour les autres sections */
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+    .key-arguments .container { flex-direction: column; }
+    .key-arguments .argument { margin-bottom: 10px; }
+    
+   
+    .products-grid, 
+
+    .page-menu .menu-items-grid {
+         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+         gap: 1.5rem; 
+    }
+
+    .page-location .location-content-grid { grid-template-columns: 1fr; }
+    .page-location .location-details h2, .page-location .location-map h2 { text-align: center; }
+    .page-location .restaurant-photo { margin-bottom: 2rem; }
+    
+    .page-about .about-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .page-about .about-intro .about-text { order: 2; }
+    .page-about .about-intro .about-image { order: 1; max-width: 400px; margin: 0 auto 2rem auto; }
+    .page-about .values-grid { grid-template-columns: 1fr; }
+
+    .page-contact .contact-content-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .page-contact .contact-form-section h2, .page-contact .contact-details-section h2 { text-align: center; }
+    .page-contact .contact-details-section { margin-top: 2rem; }
+
+    .page-legal .container, .page-faq .container { padding-left: 15px; padding-right: 15px; }
+    .page-legal .page-title, .page-faq .page-title { font-size: 2rem; }
+    .page-legal .legal-section h2 { font-size: 1.4rem; } 
+    .page-faq .faq-question { font-size: 1.05rem; padding: 1rem 1.25rem; } 
+    .page-legal .legal-section p { text-align: left; }
+    .page-faq .faq-answer { padding: 1.25rem; }
+}
+
+/* Styles pour la section des photos de l'intérieur du restaurant */
+.restaurant-interior-photos {
+  padding-top: 3rem; 
+  margin-top: 3rem; 
+  border-top: 1px solid #eaeaea; 
+  margin-bottom: 3rem;
+}
+
+.interior-photos-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem; 
+  margin-top: 2rem; 
+}
+
+.photo-item {
+  overflow: hidden; 
+  border-radius: 8px; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff; 
+}
+
+.interior-photo {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+  border-radius: 8px; 
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.photo-item:hover .interior-photo {
+  transform: scale(1.08);
+}
+
+/* Styles pour le conteneur des boutons d'action dans la section hero */
+.hero-actions {
+  margin-top: 1.5rem; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+  color: #FFFFFF !important;
+}
+
+.uber-eats-button:hover {
+  background-color: #008244;
+}
